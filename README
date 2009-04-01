@@ -1,0 +1,43 @@
+freedesktop.org and Specifications
+==================================
+
+freedesktop.org is an incubation and collaboration zone for projects and people creating Free software desktop software. One of the primary products of freedesktop.org is technical documentation for various desktop technologies that require some cooperation and consistency between different products.
+
+This git repository is an experiment in modernizing and improving the process around drafting, editing and tracking the status of these specifications.
+
+By hosting the specifications in a dvcs repository, editing can happen concurrently between multiple individuals, changes merged between repositories, revision histories examined and adoption status documented clearly and easily. The aim is to not only make the process of creating new and improving existing specifications easier and more transparent, but to allow the automation of deciding which specifications have actual cross-project/product value in terms of who has adopted them.
+
+Repository Layout
+=================
+
+There is a vcard file in the top level called people.vcf. Each individual referenced in a specification should have an entry there.
+
+Each specification gets its own directory in the specifications directory. That directory must contain the following files and directories:
+    * specfication - the text of the specification (format..? tex?)
+    * metadata - a text file containing xml describing the specfication (see the Metadata section below)
+
+Additionally, the following optional files and directories may exist:
+    * src/ - source code examples, simple implementations, test applications, etc
+    * files/ - a directory containing additional files that augment the specification (images, etc)
+    * work/ - a directory for notes and supporting materials supporting the drafting process. These files are not actually part of the specification and can be added and removed at any time.
+    * deprecated/ - older versions of the specification, if any. These are kept here for easy browsing and export from the git repository. Only officially released versions of the specification should appear here
+
+
+The Metadata File
+=================
+
+The metadata file contains XML describing the specification in brief. It must contain at least one <specification> tag with a title field, and must contain the following sections:
+    * description
+    * versions: the released versions of the specification, including the name of the release, the date and whether or not its the current version of the specification
+    * contributors: people who have contributed to the authorship of the specification, referencing the people.vcf entries
+    * adopters: projects that have adopted the specification and the current implementation status (if any)
+
+TODO: full document the XML, but that should probably wait until there is consensus on what the contents ought to be in full.
+
+
+The Specification File
+======================
+
+The specification file contains the actual text of the specification itself. It is formated using (.. latex? ..) and each section can be marked by the participating projects with when it was implemented in their product(s).
+
+TODO: this needs a LOT more detail :)
