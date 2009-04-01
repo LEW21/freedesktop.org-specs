@@ -1,0 +1,48 @@
+BEGIN:VCARD
+CLASS:PUBLIC
+FN:Bach\, Glenn
+N:Bach;Glenn;;;
+NAME:Glenn Bach
+UID:7LLKK1MBoz
+VERSION:3.0
+END:VCARD
+
+BEGIN:VCARD
+CLASS:PUBLIC
+FN:Lee\, Elliot
+N:Lee;Elliot;;;
+NAME:Elliot Lee
+ORG:Red Hat
+UID:H8yFfsOhLY
+VERSION:3.0
+END:VCARD
+
+BEGIN:VCARD
+CLASS:PUBLIC
+FN:Gulbrandsen\, Arnt
+N:Gulbrandsen;Arnt;;;
+NAME:Arnt Gulbrandsen
+ORG:Qt Software
+UID:UpVX67zh0V
+VERSION:3.0
+END:VCARD
+
+BEGIN:VCARD
+CLASS:PUBLIC
+FN:Taylor\, Owen
+N:Taylor;Owen;;;
+NAME:Owen Taylor
+ORG:Red Hat
+UID:lZegXcN7dV
+VERSION:3.0
+END:VCARD
+
+BEGIN:VCARD
+CLASS:PUBLIC
+FN:Lindal\, Jim
+N:Greene;Jaye;;;
+ORG:New Planet Software
+UID:xzGxEqt9Hv
+VERSION:3.0
+END:VCARD
+

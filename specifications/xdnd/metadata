@@ -1,0 +1,29 @@
+<title>XDND</title>
+<description>Drag-and-Drop Protocol for the X Window System</description>
+
+<versions>
+
+</versions>
+
+<contributors>
+    <maintainer vcard="xzGxEqt9Hv" />
+    <author vcard="xzGxEqt9Hv"\>
+    <author vcard="7LLKK1MBoz"\>
+    <author vcard="lZegXcN7dV"\>
+    <editor vcard="H8yFfsOhLY"\>
+<contributors>
+
+<adopters>
+    <organization name="KDE">
+        <version name="KDE 1" status="Complete" />
+        <version name="KDE 2" status="Complete" />
+        <version name="KDE 3" status="Complete" />
+        <version name="KDE 4" status="Complete" />
+    </organization>
+
+    <organization name="GNOME">
+        <version name="GNOME 1" status="Complete" />
+        <version name="GNOME 2" status="Complete" />
+    </organization>
+</adopters>
+
