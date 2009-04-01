@@ -1,8 +1,8 @@
-<title>XDND</title>
+<specification title="XDND">
 <description>Drag-and-Drop Protocol for the X Window System</description>
 
 <versions>
-
+    <version title="5" description="Final version of the XDND specification" date="05-04-2003">
 </versions>
 
 <contributors>
@@ -15,15 +15,15 @@
 
 <adopters>
     <organization name="KDE">
-        <version name="KDE 1" status="Complete" />
-        <version name="KDE 2" status="Complete" />
-        <version name="KDE 3" status="Complete" />
-        <version name="KDE 4" status="Complete" />
+        <version name="KDE 1" status="Complete" specversion="5"/>
+        <version name="KDE 2" status="Complete" specversion="5"/>
+        <version name="KDE 3" status="Complete" specversion="5"/>
+        <version name="KDE 4" status="Complete" specversion="5"/>
     </organization>
 
     <organization name="GNOME">
-        <version name="GNOME 1" status="Complete" />
-        <version name="GNOME 2" status="Complete" />
+        <version name="GNOME 1" status="Complete" specversion="5"/>
+        <version name="GNOME 2" status="Complete" specversion="5"/>
     </organization>
 </adopters>
-
+</specification>
