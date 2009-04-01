@@ -2,7 +2,31 @@
 <description>Drag-and-Drop Protocol for the X Window System</description>
 
 <versions>
-    <version title="5" description="Final version of the XDND specification" date="05-04-2003">
+    <version name="5">
+        <description>Final version of the XDND specification</description>
+        <date>05-04-2003<date>
+        <current/>
+    </version>
+
+    <version name="4">
+        <description>Fourth version of the XDND specification</description>
+        <date>07-06-1999<date>
+    </version>
+
+    <version name="3">
+        <description>Third version of the XDND specification</description>
+        <date>07-09-1998<date>
+    </version>
+
+    <version name="2">
+        <description>Second version of the XDND specification</description>
+        <date>17-08-1998<date>
+    </version>
+
+    <version name="1">
+        <description>First version of the XDND specification</description>
+        <date>02-02-1998<date>
+    </version>
 </versions>
 
 <contributors>
