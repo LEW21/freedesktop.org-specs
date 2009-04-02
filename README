@@ -13,14 +13,15 @@ Repository Layout
 There is a vcard file in the top level called people.vcf. Each individual referenced in a specification should have an entry there.
 
 Each specification gets its own directory in the specifications directory. That directory must contain the following files and directories:
-    * specfication - the text of the specification (format..? tex?)
-    * metadata - a text file containing xml describing the specfication (see the Metadata section below)
+    * specfication.xml - the text of the specification (format..? tex?)
+    * metadata.xml - a text file containing xml describing the specfication (see the Metadata section below)
 
 Additionally, the following optional files and directories may exist:
     * src/ - source code examples, simple implementations, test applications, etc
     * files/ - a directory containing additional files that augment the specification (images, etc)
     * work/ - a directory for notes and supporting materials supporting the drafting process. These files are not actually part of the specification and can be added and removed at any time.
     * releases/ - released versions of the specification, if any. These are kept here for easy browsing and export from the git repository. Only officially released versions of the specification should appear here
+    * changelog - a GNU changelog documenting major changes; it's recommended to just rely on the git history for this, however
 
 
 The Metadata File
