@@ -27,11 +27,16 @@ Additionally, the following optional files and directories may exist:
 The Metadata File
 =================
 
-The metadata file contains XML describing the specification in brief. It must contain at least one <specification> tag with a title field, and must contain the following sections:
+The metadata.xml file contains XML describing the specification in brief. It must contain at least one <specification> tag with a title field, and must contain the following sections:
     * description
     * versions: the released versions of the specification, including the name of the release, the date and whether or not its the current version of the specification
     * contributors: people who have contributed to the authorship of the specification, referencing the people.vcf entries
-    * adopters: projects that have adopted the specification and the current implementation status (if any)
+    * adopters: projects that have adopted the specification and the current implementation status (if any); valid statuses are:
+        * Complete - signifies a complete and compliant implementation
+        * Partial - signifies a partial implementation
+        * Planned - approves of the specification with plans to implement it in a future release
+        * Participating - participating in the drafting process
+        * Declined - declined adoption of the specification
 
 TODO: full document the XML, but that should probably wait until there is consensus on what the contents ought to be in full.
 
