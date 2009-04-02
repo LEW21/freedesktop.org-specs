@@ -38,14 +38,14 @@
 <contributors>
 
 <adopters>
-    <organization name="KDE" status="implemented">
+    <organization name="KDE" status="Complete">
         <version name="KDE 1" status="Complete" specversion="5"/>
         <version name="KDE 2" status="Complete" specversion="5"/>
         <version name="KDE 3" status="Complete" specversion="5"/>
         <version name="KDE 4" status="Complete" specversion="5"/>
     </organization>
 
-    <organization name="GNOME" status="implemented">
+    <organization name="GNOME" status="Complete">
         <version name="GNOME 1" status="Complete" specversion="5"/>
         <version name="GNOME 2" status="Complete" specversion="5"/>
     </organization>

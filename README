@@ -39,6 +39,7 @@ TODO: full document the XML, but that should probably wait until there is consen
 The Specification File
 ======================
 
-The specification file contains the actual text of the specification itself. It is formated using (.. latex? ..) and each section can be marked by the participating projects with when it was implemented in their product(s).
+The specification file contains the actual text of the specification itself. It is formated using DocBook xml and each section can be marked by the participating projects with when it was implemented in their product(s).
 
-TODO: this needs a LOT more detail :)
+TODO: this needs more detail :)
+
