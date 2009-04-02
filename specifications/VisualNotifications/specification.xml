@@ -3,26 +3,6 @@
 <article id="index">
  <articleinfo>
   <title>Desktop Notifications Specification</title>
-  <authorgroup>
-   <author>
-    <firstname>Mike</firstname>
-    <surname>Hearn</surname>
-    <affiliation>
-     <address>
-      <email>mike@navi.cx</email>
-     </address>
-    </affiliation>
-   </author>
-   <author>
-    <firstname>Christian</firstname>
-    <surname>Hammond</surname>
-    <affiliation>
-     <address>
-      <email>chipx86@chipx86.com</email>
-     </address>
-    </affiliation>
-   </author>
-  </authorgroup>
  </articleinfo>
 
  <sect1 id="introduction">
