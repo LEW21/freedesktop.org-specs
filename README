@@ -20,7 +20,7 @@ Additionally, the following optional files and directories may exist:
     * src/ - source code examples, simple implementations, test applications, etc
     * files/ - a directory containing additional files that augment the specification (images, etc)
     * work/ - a directory for notes and supporting materials supporting the drafting process. These files are not actually part of the specification and can be added and removed at any time.
-    * deprecated/ - older versions of the specification, if any. These are kept here for easy browsing and export from the git repository. Only officially released versions of the specification should appear here
+    * attic/ - older versions of the specification, if any. These are kept here for easy browsing and export from the git repository. Only officially released versions of the specification should appear here
 
 
 The Metadata File
