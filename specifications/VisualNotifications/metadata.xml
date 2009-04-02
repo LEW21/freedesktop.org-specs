@@ -1,0 +1,95 @@
+<specification title="Visual Notifications">
+<description>Description of a visual notifications system driven by DBus messaging.</description>
+
+<revhistory>
+    <revision>
+        <revnumber>0.9</revnumber>
+        <date>15 January 2006</date>
+        <authorinitials>cdh</authorinitials>
+        <revremark>
+            Clarify the naming for the application IDs.
+            Put back a number of things that probably shouldn't have been removed
+            from the spec.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.8</revnumber>
+        <date>23 September 2005</date>
+        <authorinitials>J5</authorinitials>
+        <revremark>
+            Major overhaul of spec to work with the newer D-Bus recursive type system.
+            Simplify protocol.
+            Changed the verbage notification type to category
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.7</revnumber>
+        <date>28 July 2005</date>
+        <authorinitials>cdh</authorinitials>
+        <revremark>
+            Added "x" and "y" hints. Talk about the variant type for hint values.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.6</revnumber>
+        <date>1 April 2005</date>
+        <authorinitials>cdh</authorinitials>
+        <revremark>
+            Updated to work with D-BUS 0.31+.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.5</revnumber>
+        <date>2 October 2004</date>
+        <authorinitials>cdh</authorinitials>
+        <revremark>
+            Added a "suppress-sound" hint. Added a "sound" capability. Renamed the
+            "soundfile" hint to sound-file".
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.4</revnumber>
+        <date>29 September 2004</date>
+        <authorinitials>cdh</authorinitials>
+        <revremark>
+            Added image support in markup, and made the restrictions on markup more
+            clear. Removed the High urgency. Added new notification types. Fixed
+            notification expiration.
+        </revremark>
+    </revision>
+    <revision>
+        <revnumber>0.3</revnumber>
+        <date>15 September 2004</date>
+        <authorinitials>cdh</authorinitials>
+        <revremark>Added hint and notification type sections</revremark>
+    </revision>
+    <revision>
+        <revnumber>0.2</revnumber>
+        <date>foo</date>
+        <authorinitials>mh</authorinitials>
+        <revremark>Added replaces field to protocol</revremark>
+    </revision>
+    <revision>
+        <revnumber>0.1</revnumber>
+        <date>foo</date>
+        <authorinitials>mh</authorinitials>
+        <revremark>Initial version</revremark>
+    </revision>
+</revhistory>
+
+<contributors>
+    <maintainer vcard="AhBk8XUFTl" />
+    <author vcard="AhBk8XUFTl"\>
+    <author vcard="uO7oIASphr"\>
+<contributors>
+
+<adopters>
+    <organization name="KDE" status="Participating">
+        <version name="KDE 4.2" status="Participating"/>
+    </organization>
+
+    <organization name="GNOME" status="Complete">
+        <version name="GNOME 2" status="Complete" specversion="0.9"/>
+    </organization>
+</adopters>
+</specification>

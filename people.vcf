@@ -9,6 +9,16 @@ END:VCARD
 
 BEGIN:VCARD
 CLASS:PUBLIC
+EMAIL:mike@navi.cx
+FN:Hearn\, Mike
+N:Hearn;Mike;;;
+NAME:Mike Hearn
+UID:AhBk8XUFTl
+VERSION:3.0
+END:VCARD
+
+BEGIN:VCARD
+CLASS:PUBLIC
 FN:Lee\, Elliot
 N:Lee;Elliot;;;
 NAME:Elliot Lee
@@ -34,6 +44,16 @@ N:Taylor;Owen;;;
 NAME:Owen Taylor
 ORG:Red Hat
 UID:lZegXcN7dV
+VERSION:3.0
+END:VCARD
+
+BEGIN:VCARD
+CLASS:PUBLIC
+EMAIL:chipx86@chipx86.com
+FN:Hammond\, Christian
+N:Hammond;Christian;;;
+NAME:Christian Hammond
+UID:uO7oIASphr
 VERSION:3.0
 END:VCARD
 
