@@ -13,8 +13,8 @@ Repository Layout
 There is a vcard file in the top level called people.vcf. Each individual referenced in a specification should have an entry there.
 
 Each specification gets its own directory in the specifications directory. That directory must contain the following files and directories:
-    * specfication.xml - the text of the specification (format..? tex?)
-    * metadata.xml - a text file containing xml describing the specfication (see the Metadata section below)
+    * specfication.xhtml - the text of the specification (XHTML2)
+    * metadata.xml - a XML file describing the specfication (see the Metadata section below)
 
 Additionally, the following optional files and directories may exist:
     * src/ - source code examples, simple implementations, test applications, etc
@@ -38,13 +38,21 @@ The metadata.xml file contains XML describing the specification in brief. It mus
         * Participating - participating in the drafting process
         * Declined - declined adoption of the specification
 
+TODO: make it possible to describe which sections are implemented.
 TODO: full document the XML, but that should probably wait until there is consensus on what the contents ought to be in full.
 
 
 The Specification File
 ======================
 
-The specification file contains the actual text of the specification itself. It is formated using DocBook xml and each section can be marked by the participating projects with when it was implemented in their product(s).
+The specification.xhtml file contains the actual text of the specification itself. It is formated using XHTML2.
 
 TODO: this needs more detail :)
 
+
+Converting DocBook to XHTML2
+============================
+
+XHTML2 specification file can be created from existing DocBook file with docbook_to_xhtml2 script:
+  php5 docbook_to_xhtml2.php < specifications/SPEC/docbook.xml > specifications/SPEC/specification.xhtml
+The effect of the transformation should then be manually checked and, if needed, corrected.
