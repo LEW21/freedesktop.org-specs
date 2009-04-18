@@ -1,0 +1,75 @@
+html {
+	font-family: "DejaVu Sans", sans-serif;
+	color: hsl(120, 40%, 10%);
+	margin: 2em;
+}
+
+.section, div.note, p.note {
+	border: 0.1em solid hsl(120, 40%, 90%);
+	padding: 0.5em;
+	margin-bottom: 1em;
+
+	border-radius:         1em;
+	-khtml-border-radius:  1em;
+	-webkit-border-radius: 1em;
+	-moz-border-radius:    1em;
+	-o-border-radius:      1em;
+
+	box-shadow:         hsl(120, 60%, 95%) 0.2em 0.2em 0.2em;
+	-khtml-box-shadow:  hsl(120, 60%, 95%) 0.2em 0.2em 0.2em;
+	-webkit-box-shadow: hsl(120, 60%, 95%) 0.2em 0.2em 0.2em;
+	-moz-box-shadow:    hsl(120, 60%, 95%) 0.2em 0.2em 0.2em;
+	-o-box-shadow:      hsl(120, 60%, 95%) 0.2em 0.2em 0.2em;
+
+	overflow: hidden; /* for floats */
+}
+
+.section .section, .section div.note, .section p.note {
+	margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: hsl(120, 40%, 60%);
+	text-shadow: hsl(120, 40%, 90%) 0.3em 0.3em 0.2em;
+	margin-top: 0;
+}
+
+p {
+	text-indent: 1em;
+	margin-bottom: 0.5em;
+}
+
+a {
+	text-decoration: none;
+	color: hsl(120, 20%, 50%);
+}
+
+a:before {
+	content: "→ ";
+}
+
+a:hover {
+	background-color: hsl(120, 60%, 90%);
+
+	border-radius:         0.3em;
+	-khtml-border-radius:  0.3em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius:    0.3em;
+	-o-border-radius:      0.3em;
+}
+
+a:active {
+	transform:         scale(0.9);
+	-khtml-transform:  scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform:    scale(0.9);
+	-o-transform:      scale(0.9);
+}
+
+.note {
+	background-color: hsl(120, 60%, 90%);
+}
+
+*:last-child {
+	margin-bottom: 0;
+}

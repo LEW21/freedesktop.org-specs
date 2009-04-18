@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xhtml2_to_xhtml1.xsl"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 2.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml2.dtd">
 <html xmlns="http://www.w3.org/2002/06/xhtml2/" xml:lang="en">
 	<head>
 		<title>XDND - Drag-and-Drop Protocol for the X Window System</title>
+		<link rel="stylesheet" href="../../spec.css"/>
 	</head>
 	<body>
 		<h>Drag-and-Drop Protocol for the X Window System</h>
@@ -22,7 +24,7 @@
 				<li>The <strong>source</strong> is the window that will supply the data.</li>
 				<li>The <strong>target</strong> is the window that the cursor is on top of and which will receive the drop if the mouse is released.</li>
 				<li>You should be familiar with the <strong>X Selection</strong> mechanism described in the Xlib manuals: Volume 0, Appendix L and Volume 1, Chapter 10.</li>
-				<li>All data types and actions are referred to by their corresponding <strong>X Atoms</strong>. The atom names of the data types are the corresponding <a class="ftp" href="ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/">MIME types</a>, in all lower case. (RFC's for MIME: <a href="http://www.ietf.org/rfc/rfc2045" title="RFC">2045</a>, <a href="http://www.ietf.org/rfc/rfc2047" title="RFC">2047</a>, <a href="http://www.ietf.org/rfc/rfc2048" title="RFC">2048</a>, <a href="http://www.ietf.org/rfc/rfc2049" title="RFC">2049</a>)</li>
+				<li>All data types and actions are referred to by their corresponding <strong>X Atoms</strong>. The atom names of the data types are the corresponding <a href="ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/">MIME types</a>, in all lower case. (RFC's for MIME: <a href="http://www.ietf.org/rfc/rfc2045">2045</a>, <a href="http://www.ietf.org/rfc/rfc2047">2047</a>, <a href="http://www.ietf.org/rfc/rfc2048">2048</a>, <a href="http://www.ietf.org/rfc/rfc2049">2049</a>)</li>
 				<li>All constants mentioned in this document are the string names of X atoms, capitalized as shown. This avoids the need for hard-coded values, which would require a global registry.</li>
 			</ul>
 		</section>
@@ -90,6 +92,7 @@
 				<p>If the target receives <var>XdndDrop</var> and will accept it, it first uses <var>XConvertSelection()</var> to retrieve the data using the given time stamp (if it doesn't already have it cached). (<strong>7</strong>) It then uses the data in conjunction with the last action and mouse position that was acknowledged via <var>XdndStatus</var>. (Over a slow network, this makes the drop location consistent with the visual feedback given to the user.) Once it is finished, it sends <var>XdndFinished</var>.</p>
 				<p>If the target receives <var>XdndDrop</var> and will not accept it, it sends <var>XdndFinished</var> and then treats it as <var>XdndLeave</var>.</p>
 			</section>
+
 		</section>
 
 		<section>
@@ -143,7 +146,9 @@
 				<p>If the source crashes, the target should treat it like <var>XdndLeave</var>.</p>
 				<p>As discussed above, the source must be careful to avoid locking up if the target does not send <var>XdndFinished</var>.</p>
 			</section>
+
 		</section>
+
 		<section>
 			<h>Notes</h>
 			<p>When the source and target are the same, the drop should be hysteretic within a region around the source window. (e.g. a 50 pixel border) The target remains the source as long as the mouse doesn't move into another widget that is willing to accept the drop. This makes it much easier for the user to drop the data on an invisible part of the source because dragging the mouse out onto the root window or a stray xterm will cause the source to scroll. The <var>XdndAware</var> property makes hysteresis possible because the root window, stray xterms, and especially the window border created by the window manager are ignored.</p>
@@ -160,6 +165,7 @@
 				<p>As a side note, on page 253 of his book, About Face, Alan Cooper agrees wholeheartedly.</p>
 				<p>The single exception that I endorse is adding a small symbol to the cursor to show that the requested action will be performed, instead of <var>XdndActionPrivate</var>. For an example, refer to the page on dragging files.</p>
 			</section>
+
 		</section>
 
 		<section>
@@ -179,25 +185,30 @@
 
 		<section>
 			<h>Atoms and Properties</h>
+
 			<section>
 				<h>XdndAware</h>
 				<p>This window property must be of type <var>XA_ATOM</var> and must contain the highest version number of the protocol supported by the target. (Version numbers start at zero. The maximum version number is <var>0xFF</var> because there is only one byte allocated for it in the <var>XdndEnter</var> message. At one new version every three months, which is very rapid turnover, this will last 64 years.)</p>
 				<p>The property must be set on each top-level X window that contains widgets that can accept drops. (new in version 3) The property should not be set on subwindows. The target must dispatch the messages to the appropriate widget. Since window managers often insert extra layers of windows, this requires searching down the subwindow tree using <var>XTranslateCoordinates()</var>.</p>
 			</section>
+
 			<section>
 				<h>XdndSelection</h>
 				<p>This is the name of the X Selection that is used when the target wants to examine the data during the drag phase and when it wants to retrieve the data after a drop.</p>
 			</section>
+
 			<section>
 				<h>Data types</h>
-				<p>All data types are referred to by their corresponding X Atoms. The atom names are the corresponding MIME types, in all lower case. (RFC's for MIME: <a href="http://www.ietf.org/rfc/rfc2045" title="RFC">2045</a>, <a href="http://www.ietf.org/rfc/rfc2047" title="RFC">2047</a>, <a href="http://www.ietf.org/rfc/rfc2048" title="RFC">2048</a>, <a href="http://www.ietf.org/rfc/rfc2049" title="RFC">2049</a>)</p>
-				<p>For text, the charset attribute can be appended to the MIME type. (e.g. Japanese -&gt; <samp>text/plain;charset="ISO-2022-JP"</samp>) If the charset attribute is not specified, it is assumed to be <var>ISO-8859-1</var>. (new in version 4)</p>
+				<p>All data types are referred to by their corresponding X Atoms. The atom names are the corresponding MIME types, in all lower case. (RFC's for MIME: <a href="http://www.ietf.org/rfc/rfc2045">2045</a>, <a href="http://www.ietf.org/rfc/rfc2047">2047</a>, <a href="http://www.ietf.org/rfc/rfc2048">2048</a>, <a href="http://www.ietf.org/rfc/rfc2049">2049</a>)</p>
+				<p>For text, the charset attribute can be appended to the MIME type. (e.g. Japanese -&gt; <samp>text/plain;charset="ISO-2022-JP</samp>) If the charset attribute is not specified, it is assumed to be <var>ISO-8859-1</var>. (new in version 4)</p>
 				<p>Note that any data type may be transferred via the <var>INCR</var> protocol.</p>
 			</section>
+
 			<section>
 				<h>XdndTypeList</h>
 				<p>If the source supports more than 3 data types, this window property must be set on the source window, must be of type <var>XA_ATOM</var>, and must contain a list of all the supported data types.</p>
 			</section>
+
 			<section>
 				<h>Actions (new in version 2)</h>
 				<p>All actions are referred to by their corresponding X Atoms. The predefined actions are
@@ -214,24 +225,30 @@
 				<p>In general, <var>XdndActionMove</var> is implemented by first requesting the data and then the special target <var>DELETE</var> defined in the X Selection protocol. (File managers will obviously just use mv or its equivalent.) <var>DELETE</var> should be sent before <var>XdndFinished</var>.</p>
 				<p>Refer to the Theory and Notes sections for more information.</p>
 			</section>
+
 			<section>
 				<h>XdndActionList (new in version 2)</h>
 				<p>If the source sends <var>XdndActionAsk</var>, this window property must be set on the source window, must be of type <var>XA_ATOM</var>, and must contain a list of all the supported actions. The first one should be the default so the user doesn't have to change the selection in the radio group too often.</p>
 			</section>
+
 			<section>
 				<h>XdndActionDescription (new in version 2)</h>
 				<p>If the source sends <var>XdndActionAsk</var>, this window property must be set on the source window, must be of type <var>XA_STRING</var>, and must contain a list of ASCII strings separated by NULL's that the target should display when describing the choices to the user. These strings must be in the same order as the atoms in the <var>XdndActionList</var> property.</p>
 				<p>The option to cancel the operation must always be provided in the dialog displayed to the user, via a Cancel button, but should not be included in <var>XdndActionList</var>.</p>
 			</section>
+
 			<section>
 				<h>XdndProxy (new in version 4)</h>
 				<p>If this window property exists, it must be of type <var>XA_WINDOW</var> and must contain the ID of the proxy window that should be checked for <var>XdndAware</var> and that should receive all the client messages, etc. In order for the proxy window to behave correctly, the appropriate field of the client messages, window or <var>data.l[0]</var>, must contain the ID of the window in which the mouse is located, not the proxy window that is receiving the messages. The only place where the proxy window should be used is when checking <var>XdndAware</var> and in the calls to <var>XSendEvent()</var>.</p>
 				<p>The proxy window must have the <var>XdndProxy</var> property set to point to itself. If it doesn't or if the proxy window doesn't exist at all, one should ignore <var>XdndProxy</var> on the assumption that it is left over after a crash.</p>
 			</section>
+
 		</section>
+
 		<section>
 			<h>Client Messages</h>
 			<p class="note">Note: All unused flags must be set to zero in every message. This allows one to define new flags without incrementing the version number.</p>
+
 			<section>
 				<h>XdndEnter</h>
 				<p>Sent from source to target when the mouse enters a window that supports XDND.</p>
@@ -249,6 +266,7 @@
 				</dl>
 				<p>If the Source supports more than three data types, bit 0 of <var>data.l[1]</var> is set. This tells the Target to check the property <var>XdndTypeList</var> on the Source window for the list of available types. This property should contain all the available types.</p>
 			</section>
+
 			<section>
 				<h>XdndPosition</h>
 				<p>Sent from source to target to provide mouse location.</p>
@@ -267,6 +285,7 @@
 					<dd>contains the action requested by the user. (new in version 2)</dd>
 				</dl>
 			</section>
+
 			<section>
 				<h>XdndStatus</h>
 				<p>Sent from target to source to provide feedback on whether or not the drop will be accepted, and, if so, what action will be taken.</p>
@@ -296,6 +315,7 @@
 					<dd>contains the action accepted by the target. This is normally only allowed to be either the action specified in the <var>XdndPosition</var> message, <var>XdndActionCopy</var>, or <var>XdndActionPrivate</var>. None should be sent if the drop will not be accepted. (new in version 2)</dd>
 				</dl>
 			</section>
+
 			<section>
 				<h>XdndLeave</h>
 				<p>Sent from source to target to cancel the drop.</p>
@@ -306,6 +326,7 @@
 					<dd>is reserved for future use (flags).</dd>
 				</dl>
 			</section>
+
 			<section>
 				<h>XdndDrop</h>
 				<p>Sent from source to target to complete the drop.</p>
@@ -318,6 +339,7 @@
 					<dd>contains the time stamp for retrieving the data. (new in version 1)</dd>
 				</dl>
 			</section>
+
 			<section>
 				<h>XdndFinished (new in version 2)</h>
 				<p>Sent from target to source to indicate that the source can toss the data because the target no longer needs access to it.</p>
@@ -335,6 +357,8 @@
 					<dd>contains the action performed by the target. None should be sent if the current target rejected the drop, i.e., when bit 0 of <var>data.l[1]</var> is zero. (new in version 5) (<span class="note">Note: Performing an action other than the one that was accepted with the last <var>XdndStatus</var> message is strongly discouraged because the user expects the action to match the visual feedback that was given based on the <var>XdndStatus</var> messages!</span>)</dd>
 				</dl>
 			</section>
+
 		</section>
+
 	</body>
 </html>
